@@ -72,9 +72,66 @@ header a {
     padding: 1em;
     font-size: 1.5em;
     border-radius: 40px;
+    display: inline-block;
+    transition: transform 0.3s ease;
 }
+
 header a:hover {
     background-color: #EDC481;
     color: #000000;
-    border: 1px solid #000000;
+    transform: translateY(-7px);
+    
+}
+
+main {
+    background-color: black;
+}
+
+main section h2 {
+    color: #EDC481;
+    font-size: 3em;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: lighter;
+    padding-top: 1em;
+}
+
+.exercise div{
+    background-color: #4A4A4A;
+    width: 35%;
+}
+
+.exercise div img {
+    width: 100%;
+}
+
+.exercise div div {
+    display: flex;
+    
+}
+
+.exercise div div h3 {
+    color: #EDC481;
+    font-family: 'Iceland', sans-serif;
+    font-size: 1.7em;
+}
+
+.exercise div div a {
+    text-decoration: none;
+    background-color: #191919;
+    color: #EDC481;
+    font-size: 1.2em;
+    padding: 0.5em 3em;
+    border: 1px solid #EDC481;
+    text-align: center;
+    display: inline-block;
+    margin: 0.5em 0;
+    transition: transform 0.3s ease;
+}
+
+.exercise div div a:hover {
+    background-color: #EDC481;
+    color: #191919; /* Cambia el color al pasar el cursor por encima */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza la transición de color */
+    transform: translateX(-7px);
 }
