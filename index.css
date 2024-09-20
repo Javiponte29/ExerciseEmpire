@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 nav {
@@ -17,9 +18,9 @@ nav a img {
 }
 
 nav div {
-    width: 50em;
     display: flex;
     justify-content: space-between;
+    width: 50em;
 }
 
 nav div a {
@@ -34,13 +35,28 @@ nav div a:hover {
     color: #EDC481;
 }
 
+/* Ocultar el menú en pantallas pequeñas */
+.nav-links {
+    display: none;
+}
+
+/* Estilo del ícono de hamburguesa */
+.hamburger {
+    display: none;
+    font-size: 3em;
+    color: #EDC481;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
 header {
     background-image: url('https://i.postimg.cc/BbJmqT2B/4041.jpg');
     background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: darken;
-    background-size: cover; /* Hace que la imagen cubra todo el fondo */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 90vh;
     margin: 0;
     padding: 0;
@@ -80,14 +96,22 @@ header a:hover {
     background-color: #EDC481;
     color: #000000;
     transform: translateY(-7px);
-    
 }
 
 main {
     background-color: black;
 }
 
-main section h2 {
+.exercise article {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    gap: 4em;
+}
+
+.exercise h2 {
     color: #EDC481;
     font-size: 3em;
     text-align: center;
@@ -96,24 +120,29 @@ main section h2 {
     padding-top: 1em;
 }
 
-.exercise div{
+.exercise div {
     background-color: #4A4A4A;
-    width: 35%;
+    width: 40%;
+    padding-bottom: 0.5em;
 }
 
 .exercise div img {
     width: 100%;
+    height: auto;
 }
 
 .exercise div div {
     display: flex;
-    
+    flex-direction: column;
+    width: 100%;
 }
 
 .exercise div div h3 {
     color: #EDC481;
     font-family: 'Iceland', sans-serif;
-    font-size: 1.7em;
+    font-size: 2em;
+    align-self: flex-start;
+    margin-left: 1em;
 }
 
 .exercise div div a {
@@ -121,17 +150,97 @@ main section h2 {
     background-color: #191919;
     color: #EDC481;
     font-size: 1.2em;
-    padding: 0.5em 3em;
+    padding: 0.5em 0em;
+    width: 50%;
     border: 1px solid #EDC481;
     text-align: center;
     display: inline-block;
-    margin: 0.5em 0;
+    margin: 0.3em 2em 0 0;
     transition: transform 0.3s ease;
+    margin-left: auto;
 }
 
 .exercise div div a:hover {
     background-color: #EDC481;
-    color: #191919; /* Cambia el color al pasar el cursor por encima */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza la transición de color */
-    transform: translateX(-7px);
+    color: #191919;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    transform: translateX(10px);
 }
+
+main > img {
+    width: 100%;
+    height: auto;
+    margin: 3em 0;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+    }
+
+    /* Mostrar el ícono de hamburguesa en pantallas pequeñas */
+    .hamburger {
+        display: block;
+    }
+
+    nav div {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        align-items: center; /* Alinea el menú al centro */
+        margin-top: 1em;
+    }
+
+    nav.active div {
+        display: flex;
+    }
+
+    nav div a {
+        font-size: 2em;
+        padding: 0.5em 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 3em;
+    }
+
+    header p {
+        font-size: 2em;
+    }
+
+    .exercise div {
+        width: 100%;
+    }
+}
+
+/* Media query para pantallas grandes (mínimo 769px) */
+@media screen and (min-width: 769px) {
+    .nav-links {
+        display: flex !important;  /* Hacer que el menú sea visible siempre en pantallas grandes */
+    }
+
+    .hamburger {
+        display: none; /* Ocultar el ícono de hamburguesa en pantallas grandes */
+    }
+
+    nav {
+        justify-content: space-between; /* Alinea el logo y el menú */
+    }
+
+    nav div {
+        display: flex;
+        width: 50em;
+    }
+
+    nav div a {
+        font-size: 2.7em;
+        padding: 0;
+        text-align: left;
+    }
+}
+

@@ -11,7 +11,8 @@
 <body>
     <nav>
         <a href='#'><img src='https://i.postimg.cc/QNggXK4H/Exercise-3.png' alt='Exercise-3'/></a>
-        <div>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <div class="nav-links">
             <a href="#">Home</a>
             <a href="#">Muscles</a>
             <a href="#">About</a>
@@ -26,6 +27,7 @@
     <main>
         <section class="exercise">
             <h2>Favourite Exercise</h2>
+            <article>
             <div>
                 <a href='#'><img src='https://i.postimg.cc/FsYkqfLf/wp10124970.webp' alt='Bench Press'/></a>
                 <div>
@@ -33,7 +35,36 @@
                     <a href="#">Exercise Information</a>
                 </div>
             </div>
+            <div>
+                <a href='#'><img src='https://i.postimg.cc/nzjhJCGc/1024x770-px-Arnold-Schwarzenegger-Barbell-Bodybuilder-bodybuilding-Dumbbells-Exercising-Gyms-525345.jpg' alt='Bicep Curl'/></a>
+                <div>
+                    <h3>Bicep Curl</h3>
+                    <a href="#">Exercise Information</a>
+                </div>
+            </div>
+            <div>
+                <a href='#'><img src='https://i.postimg.cc/G2RPxSgQ/a76a86a4ba35baf019b4377deaf5d68b.jpg' alt='Squat'/></a>
+                <div>
+                    <h3>Squat</h3>
+                    <a href="#">Exercise Information</a>
+                </div>
+            </div>
+            <div>
+                <a href='#'><img src='https://i.postimg.cc/0Q9mwKrX/images-2.jpg' alt='Barbell Row'/></a>
+                <div>
+                    <h3>Barbell Row</h3>
+                    <a href="#">Exercise Information</a>
+                </div>
+            </div>
+            </article>
         </section>
+        <img src="https://i.postimg.cc/B6DS4mJd/wp11235088.jpg" alt="">
     </main>
 </body>
+<script>
+    function toggleMenu() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('active');
+}
+</script>
 </html>
